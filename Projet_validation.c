@@ -62,7 +62,7 @@ int main() {
     menu:
 
         printf("--> Choisir un nombre dans le menu :\n\n");
-        printf("     <---------\e[1m Menu\e[m --------->\n\n");//Bold
+        printf("     <---------Menu--------->\n\n");//Bold
         
         puts("\t1-Ajouter des Etudiants.\n");
         puts("\t2-Ajouter des Projets.\n");
@@ -71,7 +71,7 @@ int main() {
         puts("\t5-Afficher la liste des themes.\n");
         puts("\t6-Chercher un theme.");
         printf("\n");
-        printf("     <------------------------>\n\n");
+        printf("     <----------------------->\n\n");
         printf("--> Votre choix est : ");
         scanf("%d", &choix);
 
@@ -88,10 +88,10 @@ int main() {
             for ( int rows = 0 ; rows < nmbEtudiant; rows++)
             {
                 printf("\n\t--> Nom de %d Etudiant(e) : ",rows+1);
-                scanf("%s",&TabEtud[rows].nom);
+                scanf(" %[^\n]",&TabEtud[rows].nom);
                 /*****Nom de l'etudiant*****/
                 printf("\t--> Prenom de %d Etudiant(e) : ",rows+1);
-                scanf("%s",&TabEtud[rows].prenom);
+                scanf(" %[^\n]",&TabEtud[rows].prenom);
                 /*****Prenom de l'etudiant*****/
 
                 printf("\t--> Matricule de %d Etudiant(e)[4 chiffres] : ",rows+1);
@@ -123,7 +123,7 @@ int main() {
             for (int remp_proj = 0; remp_proj < nmbProjet; remp_proj++){
                 
                 printf("\t--> Theme %d : ", remp_proj+1);
-                scanf("%s",&TabProjet[remp_proj].theme);
+                scanf(" %[^\n]",&TabProjet[remp_proj].theme);
                 /****Le Theme****/
 
                 printf("\t--> La difficulte [1-10] : ");
@@ -146,7 +146,7 @@ int main() {
         /*-Loop pour afficher les projets-*/
         for ( int affich_projet = 0; affich_projet < nmbProjet; affich_projet++)
         {
-                printf("\t-\e[1mProjet\e[m %d :\n",affich_projet+1,affich_projet+1);//Bold
+                printf("\t-Projet %d :\n",affich_projet+1);//Bold
                 printf("\t -> Theme : %s",TabProjet[affich_projet].theme);
                 printf("\n");
                 printf("\t -> Difficulte : %d",TabProjet[affich_projet].diff);
@@ -216,7 +216,7 @@ int main() {
         /**--Fin classment moyenne etud ordre decroissant--**/
 
         /*-Affichage de la liste de BAC en ordre decroissant-*/
-        printf("     <---------\e[1m Liste du BAC\e[m --------->\n");//Bold
+        printf("     <---------Liste du BAC--------->\n");//Bold
 
         printf("\n");
 
@@ -229,7 +229,7 @@ int main() {
         }
         /*-Fin Loop Affich Ord Decroiss Etud-*/
 
-        printf("     <-------------------------------->\n\n");
+        printf("     <------------------------------->\n\n");
 
         printf("**************************************************\n\n");
     }
@@ -260,7 +260,7 @@ int main() {
 
        /*-Loop pour l'affichage de la Liste des Projets en ordre croissant-*/
         printf("( Note: Difficulte des Themes [ le plus facile (1) --> le plus difficile (10) ] )\n\n");
-        printf("     <---------\e[1m Liste des Themes\e[m --------->\n\n");//Bold
+        printf("     <---------Liste des Themes--------->\n\n");//Bold
         
         for (int classment_projet = 0; classment_projet < nmbProjet; classment_projet++)
         {
@@ -271,7 +271,7 @@ int main() {
         }
         /*-Fin Loop Affch Lis Proj Ordre Croiss-*/
 
-        printf("     <-------------------------------------->\n\n");
+        printf("     <---------------------------------->\n\n");
 
         printf("**************************************************\n\n");
     }
@@ -283,7 +283,7 @@ int main() {
         char verif, decision_aff_proj;
 
         //Verification 
-        printf("---> Avant de chercher un theme est que tu as ajouter des etudiants/projets et affecter des etudiants? [O/N] : ");
+        printf("---> Avant de chercher un theme, est-ce que tu as ajouté des etudiants/projets et affecté des etudiants? [O/N] : ");
         scanf(" %c",&verif);
 
         printf("\n");
@@ -342,7 +342,7 @@ int main() {
         /*-Condition si verif fausse-*/
         else if (verif == 'N' || verif == 'n')
         {
-            printf("\n\n\t-->\e[1mRetourner vers le menu et ajouter des etudiants/projets puis affecter des etudiants\e[m<--\n\n");
+            printf("\n\n\t--> Retourner vers le menu et ajouter des etudiants/projets puis affecter des etudiants<--\n\n");
 
         }/*-Fin si verif fausse-*/   
 
@@ -353,8 +353,8 @@ int main() {
     /*-Condition si le choix n'est pas disponible dans le menu-*/
     if (choix > 6)
     {
-        printf("--> Choix Indisponible!!\n");
-        printf("--> Entrer un nombre dans le menu la prochaine fois!!\n\n");
+        printf("\tChoix Indisponible!!\n");
+        printf("--> Entrer un nombre dans le menu!!\n\n");
         printf("\n**************************************************\n\n");
     }
     /*-Fin Condit chx-*/
