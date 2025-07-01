@@ -18,5 +18,5 @@ A console-based C program that helps manage student data and project assignments
 ## 🛠️ How to Compile & Run
 
 1. Clone the repository or copy the code.
-2. Compile using GCC:
+2. Compile using GCC.
 
