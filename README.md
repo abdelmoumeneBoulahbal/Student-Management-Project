@@ -1,4 +1,4 @@
-# 🧑‍💻 Student Project Management System
+# 💻 Student Project Management System
 
 A console-based C program that helps manage student data and project assignments in a university setting. Built using basic C constructs like structures, arrays, sorting, and menu navigation.
 
